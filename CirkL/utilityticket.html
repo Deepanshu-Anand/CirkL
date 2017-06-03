@@ -3,15 +3,15 @@
 <div class="request-card" ng-repeat="item in requestList">
     <div class="row">
         <div class="col-sm-10">
-            <div class="row "><div class="col-sm-2 bold">REQUEST ID :</div><div class="col-sm-10">{{item.requestId}}</div></div>
-            <div class="row"><div class="col-sm-2 bold">REQUEST TYPE :</div><div class="col-sm-10">{{item.requestType}}</div></div>
-            <div class="row"><div class="col-sm-2 bold">ISSUED DATE :</div><div class="col-sm-10">{{item.date}}</div></div>
-            <div class="row"><div class="col-sm-2 bold">DESCRIPTION :</div><div class="col-sm-10">{{item.comment}}</div></div>
+            <div class="row "><div class="col-sm-2 bold">REQUEST ID :</div><div class="col-sm-10">{{item.Id}}</div></div>
+            <div class="row"><div class="col-sm-2 bold">REQUEST TYPE :</div><div class="col-sm-10">{{item.UtilityType}}</div></div>
+            <div class="row"><div class="col-sm-2 bold">ISSUED DATE :</div><div class="col-sm-10">{{item.IssueDate}}</div></div>
+            <div class="row"><div class="col-sm-2 bold">DESCRIPTION :</div><div class="col-sm-10">{{item.Description}}</div></div>
             
         </div>
         <div class="col-sm-2">
             <div class="right">
-                <button type="button" class="btn" ng-class="{'btn-danger':item.status=='open','btn-success':item.status=='closed'}">                              {{item.status}}
+                <button type="button" class="btn" ng-class="{'btn-danger':item.status=='open','btn-success':item.status=='closed'}">                              {{item.Status}}
                 </button>
             </div>
         </div>

@@ -157,21 +157,30 @@ apartmentsApp.controller('hosteventController', function($scope,$state,$rootScop
     console.log("hosteventController");
 });
 
-apartmentsApp.controller('utilitiesController', function($scope,$state,$rootScope) {
-    console.log("utilitiesController");
-        $scope.requestList = [{
-        requestId: 'Electric-100',
-        requestType: 'Electricity',
-        date: '5 June 2017',
-        comment: 'The ICC Champions Trophy returns to England and Wales in 2017 with Edgbaston, The Oval and the Cardiff Wales Stadium set to welcome the best eight One Day International sides in the world.',
-        status: 'open'
-    },{
-        requestId: 'Plumbing-101',
-        requestType: 'Plumbing',
-        date: '1 June 2017',
-        comment: 'The ICC Champions Trophy returns to England and Wales in 2017 with Edgbaston, The Oval and the Cardiff Wales Stadium set to welcome the best eight One Day International sides in the world.',
-        status: 'closed'
-    }];
+apartmentsApp.controller('utilitiesController', function($scope,$state,$rootScope,$http) {
+
+        $http({
+          method: 'GET',
+          url: '/Utility/getMemberUtilityList?id=1'
+        }).then(function successCallback(response) {
+            $scope.requestList=response.data;
+        }, function errorCallback(response) {
+            $scope.requestList = [{
+                Id: 'Electric-100',
+                UtilityType: 'Electricity',
+                IssueDate: '5 June 2017',
+                Description: 'The ICC Champions Trophy returns to England and Wales in 2017 with Edgbaston, The Oval and the Cardiff Wales Stadium set to welcome the best eight One Day International sides in the world.',
+                Status: 'open'
+            },{
+                Id: 'Plumbing-101',
+                UtilityType: 'Plumbing',
+                IssueDate: '1 June 2017',
+                Description: 'The ICC Champions Trophy returns to England and Wales in 2017 with Edgbaston, The Oval and the Cardiff Wales Stadium set to welcome the best eight One Day International sides in the world.',
+                Status: 'closed'
+            }];
+        });
+    
+
     
     $scope.requestTypes=['Electricity','Plumbing','Laundry','Maid Request','Painting','Pest Control'];
     $scope.setRequestType=function(type){
