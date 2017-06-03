@@ -18,6 +18,10 @@ body{
 .font-24{
     font-size: 24px;
 }
+.fa{
+    width:20px;
+    text-align: center;
+}
 .left-bar{
     width: 70px;
     height: 100%;
@@ -26,6 +30,9 @@ body{
     text-align: center;
     background-color: #fff;
     z-index: 1;
+    overflow: hidden;
+    margin-bottom: -5000px;
+    padding-bottom: 5000px;
 }
 .left-big-bar{
     width: 200px;
@@ -35,6 +42,9 @@ body{
     text-align: left;
     background-color: #fff;
     z-index: 1;
+    overflow: hidden;
+    margin-bottom: -5000px;
+    padding-bottom: 5000px;
 }
 .top-header{
     position: absolute;
@@ -80,6 +90,9 @@ body{
 .mrg-lt-15px{
     margin-left: 15px;
 }
+.mrg-btm-15px{
+    margin-bottom: 15px;
+}
 
 .custom-container{
     padding-left: 85px;
@@ -89,7 +102,12 @@ body{
 .content-section {
     padding: 0px;
 }
-
+.main-image{
+    height: 600px;
+}
+.width-10per{
+    width: 10%;
+}
 /*--------Events page---------*/
 
 #events-img {
@@ -145,7 +163,6 @@ ul {
 .event-card {
     height: 80px;
     background-color: white;
-    width: 70%;
     color: grey;
     margin-bottom: 5px;
 }
@@ -169,7 +186,6 @@ ul {
 }
 
 .event-details {
-    width: 70%;
     margin: -5px 0px 10px 0px;
     background-color: white;
     color: grey;
@@ -209,4 +225,70 @@ ul {
 
 .event-register-button:focus {
     outline: none;
+}
+
+
+/*-------------Request-------------*/
+.request-card{
+    background-color: #fff;
+    min-height: 100px;
+    margin-bottom: 20px;
+    color:grey;
+    padding: 20px 20px;
+}
+.bold{
+    font-weight: 500;
+}
+.right{
+    text-align: right;
+}
+.right>.btn{
+    padding: 2px 6px 3px 6px;
+}
+.request-box{
+    min-width: 100px;
+    height: 75px;
+    background-color: #3f4257;
+    color:#fff;
+    display: inline-block;
+    margin-right: 20px;
+    padding:25px;
+    text-align:center;
+    cursor: pointer;
+}
+.request-box:hover{
+    color:#ff5e3a;
+}
+.types-container{
+    padding: 10px 100px;
+    text-align: center;
+}
+
+/*
+.form-container{
+    width:300px;
+    margin: auto 0px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}
+*/
+.form-container {
+    width: 40%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    padding: 20px;
+}
+.text-right{
+    text-align: right;
+    padding-right: 20px;
+}
+.textarea{
+    resize: vertical;
+    font-size: 12px;
+}
+.detail-container{
+    margin-top: 20px;
 }

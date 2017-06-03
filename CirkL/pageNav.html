@@ -1,0 +1,18 @@
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ui-block">
+                <div class="events-page">
+                    <img id="events-img" src="{{imageSrc}}" alt="nature">
+                </div>
+                <div class="sub-menu">
+                    <div class="row">
+                        <ul class="profile-menu">
+                            <li ng-repeat="item in list track by $index">
+                                <a ui-sref="{{item.url}}" >{{item.urlName}}</a>
+                            </li>
+                        </ul>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

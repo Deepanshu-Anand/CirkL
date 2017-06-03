@@ -1,7 +1,7 @@
 
     <div class="top-header">
         <div class="page-name">
-            <span class="align-mid">EVENTS</span>
+            <span class="align-mid">UTILITIES</span>
         </div>
     </div>
     
@@ -11,11 +11,14 @@
             <div class="fa fa-home font-24"></div>
         </div>
         <div ng-click="expand()" class="left-items">
-            <div class="fa fa-bars font-20"></div>
+            <div class="fa fa-angle-double-right font-20"></div>
         </div>
         <div ng-repeat="items in leftList">
             <div class="left-items">
-                <div ui-sref="{{items.url}}" ng-class="{'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery','fa fa-wrench':items.name=='Utilities','fa fa-child':items.name=='Social Service','fa fa-address-book-o':items.name=='Directory','fa fa-futbol-o':items.name=='Events'}" class="font-20"></div>
+               
+               <!-----------icon change------------>
+                <div ui-sref="{{items.url}}" ng-class="{'fa fa-home':items.name=='Flat','fa fa-picture-o ':items.name=='Gallery','fa fa-wrench':items.name=='Utilities','fa fa-child':items.name=='Social Service','fa fa-address-book-o':items.name=='Directory','fa fa-futbol-o':items.name=='Events'}" class="font-20"></div>
+                
             </div>
         </div>       
     </div>
@@ -28,12 +31,15 @@
         </div>
 
         <div ng-click="collapse()" class="left-items pad-lt-20">
-            <div class="fa fa-bars font-20"></div>
+            <div class="fa fa-angle-double-left font-20"></div>
             <div ng-hide="hide" class="inline-block font-16 mrg-lt-15px">Collapse</div>
         </div>
         <div ng-repeat="items in leftList">
             <div class="left-items pad-lt-20">
-                <div ui-sref="{{items.url}}" ng-class="{'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery','fa fa-wrench':items.name=='Utilities','fa fa-child':items.name=='Social Service','fa fa-address-book-o':items.name=='Directory','fa fa-futbol-o':items.name=='Events'}"  class="font-20"></div>
+               
+                <!-----------icon change------------>
+                <div ui-sref="{{items.url}}" ng-class="{'fa fa-home':items.name=='Flat','fa fa-picture-o ':items.name=='Gallery','fa fa-wrench':items.name=='Utilities','fa fa-child':items.name=='Social Service','fa fa-address-book-o':items.name=='Directory','fa fa-futbol-o':items.name=='Events'}"  class="font-20"></div>
+                
                 <div ng-hide="hide" class="inline-block font-16 mrg-lt-15px" ui-sref="{{items.url}}">{{items.name}}</div>
             </div>
         </div>

@@ -33,6 +33,22 @@ apartmentsApp.config(function($stateProvider, $urlRouterProvider) {
                 parent:'main.events',
                 templateUrl: 'hostEvent.html' ,
                 controller: 'hosteventController'
+        })
+        .state('main.utilities', {
+                url: '/utilities',
+                parent:'main',
+                templateUrl: 'utilities.html' ,
+                controller: 'utilitiesController'
+        })
+        .state('main.utilities.tickets', {
+                url: '/requests',
+                parent:'main.utilities',
+                templateUrl: 'utilityticket.html'
+        })
+        .state('main.utilities.newticket', {
+                url: '/newrequests',
+                parent:'main.utilities',
+                templateUrl: 'newTicket.html'
         });
 });
 
@@ -49,18 +65,18 @@ apartmentsApp.controller('mainController', function($scope,$state,$rootScope,$ti
     $scope.hide=true;
     $( ".left-big-bar" ).toggle();
     console.log("mainController");
+    $scope.pageName=$state.$stateParams;
+    console.log($scope.pageName)
     
     $scope.leftList=[
         {"name":"Flat","url":"main.events"},
         {"name":"Events","url":"main.events.eventlist"},
-        {"name":"Utilities","url":"main.events"},
-        {"name":"Social Service","url":"main.events"},
-        {"name":"Gallery","url":"main.events.timeline"},
-        {"name":"Directory","url":"main.events"},
-        
+        {"name":"Utilities","url":"main.utilities.tickets"},
+        {"name":"Social Service","url":"main.socialservice"},
+        {"name":"Gallery","url":"main.gallery"},
+        {"name":"Directory","url":"main.directory"},
     ];
 
-    
     $scope.collapse=function(){
         $scope.hide=true;
         $( ".left-big-bar" ).toggle( "slide" );
@@ -140,4 +156,48 @@ apartmentsApp.controller('eventlistController', function($scope,$state,$rootScop
 apartmentsApp.controller('hosteventController', function($scope,$state,$rootScope) {
     console.log("hosteventController");
 });
+
+apartmentsApp.controller('utilitiesController', function($scope,$state,$rootScope) {
+    console.log("utilitiesController");
+        $scope.requestList = [{
+        requestId: 'Electric-100',
+        requestType: 'Electricity',
+        date: '5 June 2017',
+        comment: 'The ICC Champions Trophy returns to England and Wales in 2017 with Edgbaston, The Oval and the Cardiff Wales Stadium set to welcome the best eight One Day International sides in the world.',
+        status: 'open'
+    },{
+        requestId: 'Plumbing-101',
+        requestType: 'Plumbing',
+        date: '1 June 2017',
+        comment: 'The ICC Champions Trophy returns to England and Wales in 2017 with Edgbaston, The Oval and the Cardiff Wales Stadium set to welcome the best eight One Day International sides in the world.',
+        status: 'closed'
+    }];
+    
+    $scope.requestTypes=['Electricity','Plumbing','Laundry','Maid Request','Painting','Pest Control'];
+    $scope.setRequestType=function(type){
+        $scope.requestJson={
+            "requestType":type,
+            "Description":"",
+            "date":new Date(),
+            "status":"open"
+        }
+    }
+});
+
+
+apartmentsApp.directive('pageNav',function(){
+  return {
+    restrict: 'EA',
+    transclude: true,
+    scope: {},
+    link: function(scope, element, attrs, controllers) {
+        console.log(attrs.list);
+        scope.imageSrc=attrs.imageUrl;
+        scope.list=JSON.parse(attrs.list);
+        console.log(scope.list)
+    },
+    templateUrl: 'pageNav.html'
+  };
+});
+
 
