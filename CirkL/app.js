@@ -191,13 +191,15 @@ apartmentsApp.controller('utilitiesController', function($scope,$state,$rootScop
             "Status":"open",
             "Id":"",
             "UtilityId":"",
-            "Phone":"",
+            "PhoneNumber":"",
             "MemberName":"Sagar",
             "MemberId":"1"
         }
     }
-    
+    $scope.i= 0;
     $scope.createNewRequest=function(){
+        $scope.requestJson.UtilityId=51+$scope.i+1;
+        $scope.i++;
         $http({
           method: 'POST',
           url: '/Utility/createMemberUtilityList',

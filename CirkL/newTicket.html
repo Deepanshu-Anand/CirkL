@@ -8,29 +8,29 @@
            </div>
        </div>
    </div>
-    <div ng-if="requestJson.requestType" class="detail-container" style="width:100%">  
+    <div ng-if="requestJson.UtilityType" class="detail-container" style="width:100%">  
       <form name="request" class="form-container">
           <div class="row mrg-btm-15px">
                <div class="col-sm-6 text-right">REQUEST TYPE :</div>
-               <div class="col-sm-6">{{requestJson.requestType}}</div>
+               <div class="col-sm-6">{{requestJson.UtilityType}}</div>
           </div>
           <div class="row mrg-btm-15px">
                <div class="col-sm-6 text-right">DESCRIPTION* :</div>
                <div class="col-sm-6 ">
-                   <textarea name="desc" rows="5" required class="textarea" ng-model="requestJson.description"></textarea>
+                   <textarea name="desc" rows="5" required class="textarea" ng-model="requestJson.Description"></textarea>
               </div>
           </div>
           <div class="row mrg-btm-15px">
                <div class="col-sm-6 text-right">Current Date :</div>
-               <div class="col-sm-6">{{requestJson.date | date:'dd MMM yyyy'}}</div>
+               <div class="col-sm-6">{{requestJson.IssueDate | date:'dd MMM yyyy'}}</div>
           </div>
           <div class="row mrg-btm-15px">
-               <div class="col-sm-6 text-right">Phone {{request.phone.$valid}}number* :</div>
-               <div class="col-sm-6"><input name="phone" required ng-model="requestJson.phone"></div>
+               <div class="col-sm-6 text-right">Phone number* :</div>
+               <div class="col-sm-6"><input name="phone" required ng-model="requestJson.PhoneNumber"></div>
           </div>
           <div class="row mrg-btm-15px">
                <div class="col-sm-6 col-sm-offset-6">
-                   <button type="button" class="btn btn-success">Submit</button>
+                   <button type="button" ng-click="createNewRequest()" class="btn btn-success">Submit</button>
                </div>
           </div>
           
