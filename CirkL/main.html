@@ -15,7 +15,7 @@
         </div>
         <div ng-repeat="items in leftList">
             <div class="left-items">
-                <div ui-sref="{{items.url}}" ng-class="{'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery'}" class="font-20"></div>
+                <div ui-sref="{{items.url}}" ng-class="{'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery','fa fa-wrench':items.name=='Utilities','fa fa-child':items.name=='Social Service','fa fa-address-book-o':items.name=='Directory','fa fa-futbol-o':items.name=='Events'}" class="font-20"></div>
             </div>
         </div>       
     </div>
@@ -33,7 +33,7 @@
         </div>
         <div ng-repeat="items in leftList">
             <div class="left-items pad-lt-20">
-                <div ui-sref="{{items.url}}" ng-class="{'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery'}" class="font-20"></div>
+                <div ui-sref="{{items.url}}" ng-class="{'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery','fa fa-wrench':items.name=='Utilities','fa fa-child':items.name=='Social Service','fa fa-address-book-o':items.name=='Directory','fa fa-futbol-o':items.name=='Events'}"  class="font-20"></div>
                 <div ng-hide="hide" class="inline-block font-16 mrg-lt-15px" ui-sref="{{items.url}}">{{items.name}}</div>
             </div>
         </div>

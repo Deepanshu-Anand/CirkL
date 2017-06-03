@@ -46,14 +46,14 @@ apartmentsApp.controller('mainController', function($scope,$state,$rootScope,$ti
     
     $scope.leftList=[
         {"name":"Flat","url":"main.events"},
+        {"name":"Events","url":"main.events.timeline"},
         {"name":"Utilities","url":"main.events"},
         {"name":"Social Service","url":"main.events"},
         {"name":"Gallery","url":"main.events.timeline"},
         {"name":"Directory","url":"main.events"},
         
     ];
-    
-    {'glyphicon glyphicon-home':items.name=='Flat','glyphicon glyphicon-picture':items.name=='Gallery','':items.name=='Utilities','':items.name=='Social Service','glyphicon glyphicon-phone-alt':items.name=='Directory'}
+
     
     $scope.collapse=function(){
         $scope.hide=true;
