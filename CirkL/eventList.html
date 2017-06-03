@@ -13,8 +13,22 @@
                 </div>
             </div>
             <div class="event-register-btn">
-                <button>Register</button>
+                <button ng-click="register(item)" class="event-register-button" ng-class="{'registered': item.regFlag, 'not-registered': !item.regFlag}">
+                    {{item.regFlag? 'Registered' : 'Register'}}</button>
             </div>    
+        </div>
+        <div class="event-details" ng-if="selectedName==item.name">
+            <div class="event-desc">
+                <span class="event-row">Entry Fee: {{item.fee}}</span>
+                <p class="event-row">Description: {{item.description}}</p>
+            </div>
+            <div class="event-confirm" ng-if="!item.regFlag">
+                <button type="button" class="btn btn-primary" ng-click="confirmRegister(item)">Confirm</button>
+                <button type="button" class="btn btn-default" ng-click="cancelRegister(item)">Cancel</button>
+            </div>
+            <div class="event-confirm" ng-if="item.regFlag">
+                <button type="button" class="btn btn-default" ng-click="cancelRegister(item)">Close</button>
+            </div>
         </div>
     </div>  
 </div>
