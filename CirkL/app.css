@@ -20,7 +20,7 @@ body{
 }
 .left-bar{
     width: 70px;
-    min-height: 100vh;
+    height: 100%;
     position: absolute;
     left: 0px;
     text-align: center;
@@ -29,7 +29,7 @@ body{
 }
 .left-big-bar{
     width: 200px;
-    min-height: 100vh;
+    height: 100%;
     position: absolute;
     left: 0px;
     text-align: left;
@@ -83,6 +83,9 @@ body{
     padding-top: 85px;
 }
 
+.content-section {
+    padding: 0px;
+}
 
 /*--------Events page---------*/
 
@@ -98,6 +101,7 @@ ul {
     vertical-align: middle;
     line-height: 100px;
     background-color: white;
+    margin-bottom: 15px;
 }
 
 .profile-menu {
@@ -133,4 +137,46 @@ ul {
 .profile-menu li .more-dropdown a {
     padding: 10px 0;
     font-size: 13px; 
+}
+
+.event-card {
+    height: 80px;
+    background-color: white;
+    width: 70%;
+    color: grey;
+    margin-bottom: 5px;
+}
+
+.event-mindetails {
+    display: inline-block;
+    width: 85%;
+}
+
+.event-name {
+    font-size: x-large;
+    float: left;   
+}
+
+.event-row {
+    margin: 10px 0px 0px 10px;
+}
+
+.event-date {
+    float: right;
+}
+
+.event-register-btn {
+    display: inline-block;
+    width: 14%;
+    height: 100%;
+    color: white;
+    float: right;
+}
+
+.event-register-btn > button {
+    width: 100%;
+    height: 100%;
+    background-color: #ff5e3a;
+    border-style: hidden;
+    font-size: large;
 }
