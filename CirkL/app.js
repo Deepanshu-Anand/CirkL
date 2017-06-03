@@ -185,28 +185,45 @@ apartmentsApp.controller('utilitiesController', function($scope,$state,$rootScop
     $scope.requestTypes=['Electricity','Plumbing','Laundry','Maid Request','Painting','Pest Control'];
     $scope.setRequestType=function(type){
         $scope.requestJson={
-            "requestType":type,
+            "UtilityType":type,
             "Description":"",
-            "date":new Date(),
-            "status":"open"
+            "IssueDate":new Date(),
+            "Status":"open",
+            "Id":"",
+            "UtilityId":"",
+            "Phone":"",
+            "MemberName":"Sagar",
+            "MemberId":"1"
         }
+    }
+    
+    $scope.createNewRequest=function(){
+        $http({
+          method: 'POST',
+          url: '/Utility/createMemberUtilityList',
+          data:$scope.requestJson
+        }).then(function successCallback(response) {
+            
+        }, function errorCallback(response) {
+    
+        });
     }
 });
 
 
-apartmentsApp.directive('pageNav',function(){
-  return {
-    restrict: 'EA',
-    transclude: true,
-    scope: {},
-    link: function(scope, element, attrs, controllers) {
-        console.log(attrs.list);
-        scope.imageSrc=attrs.imageUrl;
-        scope.list=JSON.parse(attrs.list);
-        console.log(scope.list)
-    },
-    templateUrl: 'pageNav.html'
-  };
-});
+    apartmentsApp.directive('pageNav',function(){
+      return {
+        restrict: 'EA',
+        transclude: true,
+        scope: {},
+        link: function(scope, element, attrs, controllers) {
+            console.log(attrs.list);
+            scope.imageSrc=attrs.imageUrl;
+            scope.list=JSON.parse(attrs.list);
+            console.log(scope.list)
+        },
+        templateUrl: 'pageNav.html'
+      };
+    });
 
 
