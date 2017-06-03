@@ -9,11 +9,22 @@
                     <div class="row">
                         <ul class="profile-menu">
                             <li>
-                                <a ui-sref="eventlist" class="active">Upcoming Events</a>
+                                <a ui-sref="timeline" class="active">Timeline</a>
                             </li>
                             <li>
-                                <a ui-sref="hostevent">Host an Event</a>
+                                <a ui-sref="time">About</a>
                             </li>
+                            <li>
+                                <a ui-sref="time">Friends</a>
+                            </li>
+                            <li>
+                                <a ui-sref="time">About</a>
+                            </li>
+                            <li>
+                                <a ui-sref="time">Friends</a>
+                            </li>
+                            <li>
+                                <a ui-sref="time">Misc</a>
                             </li>
                         </ul>   
                     </div>
@@ -22,7 +33,7 @@
         </div>
     </div>
 
-    <div class="container-fluid content-section">
-        <div ui-view=""></div>
+    <div class="row">
+            <div ui-view></div>
     </div>
 </div>

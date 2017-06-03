@@ -22,17 +22,11 @@ apartmentsApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'events.html' ,
             controller: 'eventsController'
         })
-        .state('main.events.eventlist', {
-                url: '/eventlist',
+        .state('main.events.timeline', {
+                url: '/timeline',
                 parent:'main.events',
-                templateUrl: 'eventList.html' ,
-                controller: 'eventlistController'
-        })
-        .state('main.events.hostevent', {
-                url: '/hostevent',
-                parent:'main.events',
-                templateUrl: 'hostEvent.html' ,
-                controller: 'hosteventController'
+                templateUrl: 'timeline.html' ,
+                controller: 'timelineController'
         });
 });
 
@@ -52,7 +46,7 @@ apartmentsApp.controller('mainController', function($scope,$state,$rootScope,$ti
     
     $scope.leftList=[
         {"name":"Flat","url":"main.events"},
-        {"name":"Events","url":"main.events.eventlist"},
+        {"name":"Events","url":"main.events.timeline"},
         {"name":"Utilities","url":"main.events"},
         {"name":"Social Service","url":"main.events"},
         {"name":"Gallery","url":"main.events.timeline"},
@@ -82,11 +76,15 @@ apartmentsApp.controller('mainController', function($scope,$state,$rootScope,$ti
     }
 });
 
-apartmentsApp.controller('eventlistController', function($scope,$state,$rootScope) {
-    console.log("eventlistController");
-});
+apartmentsApp.controller('timelineController', function($scope,$state,$rootScope) {
+    console.log("timeline");
+})
 
-apartmentsApp.controller('hosteventController', function($scope,$state,$rootScope) {
-    console.log("hosteventController");
-});
+//apartmentsApp.run(
+//    ['$rootScope', '$state', '$stateParams',
+//      function ($rootScope, $state, $stateParams) {
+//          $rootScope.$state = $state;
+//          $rootScope.$stateParams = $stateParams;
+//      }
+//    ])
 
