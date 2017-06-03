@@ -1,0 +1,136 @@
+/*left navbar*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+@font-face {
+   font-family: ProximaNova;
+   src: url(ProximaNovaBold.otf);
+}
+body{
+    font-family: Roboto;
+    background: #edf2f6;
+}
+
+.inline-block{display: inline-block;}
+.block{display: block;}
+
+.font-18{font-size: 18px;}
+.font-20{font-size: 20px;}
+.font-24{
+    font-size: 24px;
+}
+.left-bar{
+    width: 70px;
+    min-height: 100vh;
+    position: absolute;
+    left: 0px;
+    text-align: center;
+    background-color: #fff;
+    z-index: 1;
+}
+.left-big-bar{
+    width: 200px;
+    min-height: 100vh;
+    position: absolute;
+    left: 0px;
+    text-align: left;
+    background-color: #fff;
+    z-index: 1;
+}
+.top-header{
+    position: absolute;
+    background-color: #3f4257;
+    min-height: 70px;
+    width: 100%;
+    padding-left: 70px;
+    color: #fff;
+    z-index: 1;
+}
+.page-name{
+    font-weight: bold;
+    font-size: 16px;
+    padding: 23px;
+}
+
+.align-mid{
+    vertical-align: middle
+}
+
+.container{
+    padding-top: 70px;
+}
+.logo{
+    min-height: 70px;
+    background-color: #ff5e3a;
+    color: #fff;
+    padding: 22px;
+}
+.left-items{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.pad-lt-20{
+    padding-left: 22px;
+}
+.mrg-lt-10px{
+    margin-left: 10px;
+}
+.mrg-lt-15px{
+    margin-left: 15px;
+}
+
+.custom-container{
+    padding-left: 85px;
+    padding-top: 85px;
+}
+
+
+/*--------Events page---------*/
+
+#events-img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.sub-menu {
+    vertical-align: middle;
+    line-height: 100px;
+    background-color: white;
+}
+
+.profile-menu {
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-around; 
+}
+.profile-menu li > div, .profile-menu li a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #9a9fbf;
+    display: block; 
+}
+.profile-menu li > div:hover, .profile-menu li a:hover {
+    color: #515365; 
+}
+.profile-menu li > div.active, .profile-menu li a.active {
+    color: #515365; 
+}
+.profile-menu .more-dropdown {
+    width: 230px;
+    top: calc(100% + 10px);
+    right: -25px; 
+}
+.profile-menu .more-dropdown li {
+    display: block; 
+}
+.profile-menu li .more-dropdown a {
+    padding: 10px 0;
+    font-size: 13px; 
+}
